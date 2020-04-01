@@ -1,10 +1,14 @@
 
+# my bloody ggplot2
+
+my bloody valentine albums reimagined as ggplot2s.
+
+## Isn’t Anything (1988)
+
 ``` r
 library(ggplot2)
 library(gapminder)
 ```
-
-# Isn’t Anything (1988)
 
 ``` r
 isnt_anything <- ggplot(gapminder, aes(
@@ -32,7 +36,7 @@ isnt_anything
 
 <img src="albums/isnt-anything.jpg" width="400px" /><img src="plots/isnt-anything.png" width="400px" />
 
-# Loveless (1991)
+## Loveless (1991)
 
 ``` r
 loveless <- ggplot(gapminder, aes(x = lifeExp, y = gdpPercap, colour = continent)) +
@@ -57,7 +61,7 @@ loveless
 
 <img src="albums/loveless.png" width="400px" /><img src="plots/loveless.png" width="400px" />
 
-# mbv (2013)
+## mbv (2013)
 
 ``` r
 mbv <- ggplot(gapminder, aes(x = year, y = lifeExp, colour = continent)) +

@@ -13,12 +13,16 @@ knitr::opts_chunk$set(
 )
 ```
 
+# my bloody ggplot2
+
+my bloody valentine albums reimagined as ggplot2s.
+
+## Isn't Anything (1988)
+
 ```{r}
 library(ggplot2)
 library(gapminder)
 ```
-
-# Isn't Anything (1988)
 
 ```{r isnt_anything, fig.show = "hide"}
 isnt_anything <- ggplot(gapminder, aes(
@@ -52,7 +56,7 @@ ggsave(here::here("plots", "isnt-anything.png"), isnt_anything, width = 5, heigh
 knitr::include_graphics(c("albums/isnt-anything.jpg", "plots/isnt-anything.png"))
 ```
 
-# Loveless (1991)
+## Loveless (1991)
 
 ```{r loveless, fig.show = "hide"}
 loveless <- ggplot(gapminder, aes(x = lifeExp, y = gdpPercap, colour = continent)) +
@@ -83,7 +87,7 @@ ggsave(here::here("plots", "loveless.png"), loveless, width = 5, height = 5)
 knitr::include_graphics(c("albums/loveless.png", "plots/loveless.png"))
 ```
 
-# mbv (2013)
+## mbv (2013)
 
 ```{r mbv, fig.show = "hide"}
 mbv <- ggplot(gapminder, aes(x = year, y = lifeExp, colour = continent)) +
