@@ -1,24 +1,28 @@
 
 ``` r
 library(ggplot2)
-library(extrafont)
 library(gapminder)
 ```
 
 # Isn’t Anything (1988)
 
 ``` r
-isnt_anything <- ggplot(gapminder, aes(x = continent, y = gdpPercap, colour = continent)) +
+isnt_anything <- ggplot(gapminder, aes(
+  x = continent, y = gdpPercap,
+  fill = continent, colour = continent
+)) +
   geom_boxplot() +
-  scale_colour_manual(values = c("#ECD5AB", "#E7CFB5", "#EBCDC2", "#AC6B65", "#BD9188")) +
+  scale_fill_manual(values = c("#F3E5CC", "#EEDDCB", "#F3e1DA", "#CDA6A2", "#D0B2AB")) +
+  scale_color_manual(values = c("#ECD5AB", "#E7CFB5", "#EBCDC2", "#AC6B65", "#BD9188")) +
   labs(title = "GDP per capita by continent") +
   theme(
     plot.background = element_rect(fill = "#F3EED0"),
     panel.background = element_rect(fill = "#F3EEDA"),
-    plot.title = element_text(colour = "#4A1108", family = "ITC Kabel Std Book"),
+    plot.title = element_text(colour = "#4A1108", family = "ITC Kabel Std Book", size = 20),
+    plot.title.position = "plot",
     panel.grid.major = element_line(colour = "#E9E6D3"),
     panel.grid.minor = element_line(colour = "#E0C79F"),
-    axis.text = element_text(colour = "#4A1108", family = "ITC Kabel Std Book"),
+    axis.text = element_text(colour = "#4A1108", family = "ITC Kabel Std Book", size = 15),
     axis.title = element_blank(),
     legend.position = "none"
   )
@@ -32,7 +36,7 @@ isnt_anything
 
 ``` r
 loveless <- ggplot(gapminder, aes(x = lifeExp, y = gdpPercap, colour = continent)) +
-  geom_jitter(alpha = 0.75) +
+  geom_jitter(size = 4, alpha = 0.25) +
   scale_colour_manual(values = c("#000000", "#BE1D22", "#CD1A44", "#932025", "#E1216E")) +
   scale_y_continuous(limits = c(0, 30000)) +
   labs(caption = "GDP per capita versus life expectancy") +
@@ -57,18 +61,18 @@ loveless
 
 ``` r
 mbv <- ggplot(gapminder, aes(x = year, y = lifeExp, colour = continent)) +
-  geom_jitter(alpha = 0.5) +
-  scale_colour_manual(values = rev(c("#1112B8", "#0b0c80", "#1412A3", "#0a0861", "#00052F"))) +
+  geom_jitter(size = 3, alpha = 0.5) +
+  scale_colour_manual(values = rev(c("#1518D5", "#1513D6", "#1412A3", "#0a0861", "#00052F"))) +
   labs(x = "Year", y = "Life Expectancy") +
   theme_dark(base_family = "ITC Kabel Std Bold", ) +
   theme(
     plot.background = element_rect(fill = "#090B7C"),
     panel.background = element_rect(fill = "#090B7C"),
     panel.grid.major = element_line(colour = "#1519D0"),
-    panel.grid.minor = element_line(colour = "#020339"),
+    panel.grid.minor = element_line(colour = "#1518D5"),
     legend.position = "none",
     axis.title = element_text(colour = "#5A31BB", size = 20, hjust = 0),
-    axis.text = element_text(colour = "#1007A0", size = 10)
+    axis.text = element_text(colour = "#1518D5", size = 10)
   )
 
 mbv
