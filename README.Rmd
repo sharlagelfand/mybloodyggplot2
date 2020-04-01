@@ -30,7 +30,7 @@ isnt_anything <- ggplot(gapminder, aes(
   scale_color_manual(values = c("#ECD5AB", "#E7CFB5", "#EBCDC2", "#AC6B65", "#BD9188")) +
   labs(title = "GDP per capita by continent") +
   theme(
-    plot.background = element_rect(fill = "#F3EED0"),
+    plot.background = element_rect(fill = "#F3EED0", colour = "#F3EED0"),
     panel.background = element_rect(fill = "#F3EEDA"),
     plot.title = element_text(colour = "#4A1108", family = "ITC Kabel Std Book", size = 20),
     plot.title.position = "plot",
@@ -62,7 +62,7 @@ loveless <- ggplot(gapminder, aes(x = lifeExp, y = gdpPercap, colour = continent
   labs(caption = "GDP per capita versus life expectancy") +
   theme_minimal(base_family = "ITC Kabel Std Bold") +
   theme(
-    plot.background = element_rect(fill = "#421A1A"),
+    plot.background = element_rect(fill = "#421A1A", colour = "#421A1A"),
     panel.background = element_rect(fill = "#E5247D"),
     panel.grid.major = element_line(colour = "#EE5198"),
     panel.grid.minor = element_line(colour = "#BE1D22"),
@@ -92,7 +92,7 @@ mbv <- ggplot(gapminder, aes(x = year, y = lifeExp, colour = continent)) +
   labs(x = "Year", y = "Life Expectancy") +
   theme_dark(base_family = "ITC Kabel Std Bold", ) +
   theme(
-    plot.background = element_rect(fill = "#090B7C"),
+    plot.background = element_rect(fill = "#090B7C", colour = "#090B7C"),
     panel.background = element_rect(fill = "#090B7C"),
     panel.grid.major = element_line(colour = "#1519D0"),
     panel.grid.minor = element_line(colour = "#1518D5"),
